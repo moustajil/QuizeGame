@@ -1,36 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:quizegame/start_screen.dart';
 
 void main() {
-  runApp(MaterialApp(home: StartScreen()));
+  runApp(const MyApp());
 }
 
-class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          decoration: BoxDecoration(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepPurple, Colors.deepPurpleAccent],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topLeft,
+              colors: [
+                Colors.deepPurple,
+                Colors.deepPurpleAccent,
+                Colors.purpleAccent,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 30),
-              Image.asset("assets/images/quiz-logo.png"),
-              SizedBox(height: 30),
-              Text("Play And Learn With Fun Away "),
-              SizedBox(height: 30),
-              TextButton(onPressed: () {}, child: Text("Play")),
-              SizedBox(height: 30),
-            ],
-          ),
+          child: StartScreen(),
         ),
       ),
     );
