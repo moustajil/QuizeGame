@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:quizegame/answer_button.dart';
 
 class QuistionScreen extends StatefulWidget {
   const QuistionScreen({super.key});
@@ -10,6 +13,16 @@ class QuistionScreen extends StatefulWidget {
 class _QuistionScreenState extends State<QuistionScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Question Screen"));
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("The Question", style: TextStyle(color: Colors.white)),
+          SizedBox(height: 30),
+          AnswerButton(answerText: "A", onTap: () {}),
+        ],
+      ),
+    );
   }
 }
